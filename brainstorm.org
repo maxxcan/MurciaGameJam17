@@ -1,0 +1,8 @@
+#+TITLE: brainstorm
+#+AUTHOR: patricio and friends
+#+DATE: <2017-10-27 vie>
+
+* Ideas para el juego
+
+1. Demonio o similar que tiene que recolectar almas para pasar de fase
+2. 
