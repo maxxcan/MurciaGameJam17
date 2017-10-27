@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/tileset_suelo.tres" type="TileSet" id=3]
+[ext_resource path="res://Scripts/Desplazamiento_nivel.gd" type="Script" id=4]
+[ext_resource path="res://Assets/pixel-art-background-seamless-7.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -10,6 +12,26 @@ custom_solver_bias = 0.0
 extents = Vector2( 31.4607, 33.0982 )
 
 [node name="Nivel1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+transform/pos = Vector2( 629.984, 328.889 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
 
 [node name="Player" type="RigidBody2D" parent="."]
 
@@ -48,25 +70,6 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-drag_margin/h_enabled = true
-drag_margin/v_enabled = true
-smoothing/enable = true
-smoothing/speed = 5.0
-drag_margin/left = 0.2
-drag_margin/top = 0.2
-drag_margin/right = 0.2
-drag_margin/bottom = 0.2
-
 [node name="TileMap" type="TileMap" parent="."]
 
 mode = 0
@@ -83,9 +86,18 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 589840, 0, 589841, 0, 589842, 0, 589843, 0, 655360, 0, 655361, 0, 655362, 0, 655363, 0, 655364, 0, 655365, 0, 655366, 0, 655367, 0, 655368, 0, 655369, 0, 655370, 0, 655371, 0, 655372, 0, 655373, 0, 655374, 0, 655375, 0, 655376, 0 )
+tile_data = IntArray( 131095, 0, 327691, 0, 327692, 0, 327693, 0, 327694, 0, 327695, 0, 393226, 0, 458761, 0, 458773, 0, 458774, 0, 458775, 0, 458776, 0, 458777, 0, 589840, 0, 589841, 0, 589842, 0, 589843, 0, 589844, 0, 589845, 0, 589846, 0, 655360, 0, 655361, 0, 655362, 0, 655363, 0, 655364, 0, 655365, 0, 655366, 0, 655367, 0, 655368, 0, 655369, 0, 655370, 0, 655371, 0, 655372, 0, 655373, 0, 655374, 0, 655375, 0, 655376, 0, 720922, 0, 720923, 0, 720924, 0, 720925, 0, 720926, 0, 720927, 0, 720928, 0 )
+script/script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Background" type="Sprite" parent="."]
+
+transform/pos = Vector2( -66.4557, -163.064 )
+transform/scale = Vector2( 1.30307, 1.3783 )
+z/z = -1
+texture = ExtResource( 5 )
+centered = false
 
 
